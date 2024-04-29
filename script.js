@@ -12,6 +12,11 @@ var currentScore0 = document.getElementById("current--0");
 
 const player0 = document.querySelector(".player--0");
 const player1 = document.querySelector(".player--1");
+let vplayer0TScore = 0; //total score
+let vplayer1Score = 0;
+
+let vplayer0CScore = 0; //current score
+let vplayer1CScore = 0;
 
 var CurrentScore_class = document.getElementsByClassName("current-score");
 
@@ -23,23 +28,17 @@ console.log(currentScore0.innerHTML);
 
 //Who plays
 let activePlayer = 0;
+
 function switchPlayer() {
-  let active_player = 1;
+  //  ------test to check if switching when starting is 1
+  //let active_player = 1;
   console.log("Hold Pressed");
   // Remove active class from current active player
   document
     .querySelector(`.player--${activePlayer}`)
     .classList.remove("player--active");
   // Switch active player
-  if (activePlayer == 0) {
-    activePlayer = 1;
-
-    document.querySelector(".");
-  } else {
-    activePlayer = 0;
-  }
-
-  //activePlayer = activePlayer === 0 ? 1 : 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
   // Add active class to the new active player
   document
     .querySelector(`.player--${activePlayer}`)
@@ -48,21 +47,43 @@ function switchPlayer() {
 
 //roll dice
 
-//current_score Reset
+//current score function
+
+//On_one function
+
+function current_Score() {}
+
 function resetScore() {
   document.querySelector(".dice").src = `/dice-5.png`;
+  activePlayer = 1;
+  let vplayer0CScore = 0;
+  let vplayer1CScore = 0;
   for (let i = 0; i < 2; i++) {
-    document.getElementById(`current--${i}`).textContent = 0;
-    document.getElementById(`score--${i}`).textContent = 0;
+    document.getElementById(`current--${i}`).textContent = vplayer0CScore;
+    document.getElementById(`score--${i}`).textContent = vplayer0CScore;
   }
+
+  switchPlayer();
 }
 
 //roll dice on click.
 
 btnRollDice.addEventListener("click", function () {
-  const randomNum = Math.trunc(Math.random() * 6 + 1);
+  let randomNum = Math.trunc(Math.random() * 6 + 1);
   document.querySelector(".dice").src = `/dice-${randomNum}.png`;
   console.log(randomNum);
+  if (activePlayer === 0) {
+    console.log("player 1 ");
+    vplayer0CScore += randomNum;
+  } else {
+    console.log("player 2 ");
+    vplayer1CScore += randomNum;
+  }
+
+  document.getElementById("current--0").textContent = vplayer0CScore;
+  document.getElementById("current--1").textContent = vplayer1CScore;
+
+  console.log(`player1 current`);
 });
 
 //test
