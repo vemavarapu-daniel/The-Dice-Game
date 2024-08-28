@@ -20,6 +20,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+ 
+}
+/* Chatbox */ 
+
+.chatBox {
+  position: absolute;
+  bottom: 2rem; /* Adjust as needed */
+  right: 2rem; /* Adjust as needed */
+  color: #000000;
+  font-size: 1rem;
+  text-align: bottom;
+
+}
+
+.chatBoxLabel {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  display: none; /* Hidden by default */
 }
 
 /* LAYOUT */
