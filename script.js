@@ -19,7 +19,10 @@ let vplayer0TScore = 0; //total score
 let vplayer1TScore = 0;
 let vplayer0CScore = 0; //current score
 let vplayer1CScore = 0;
+<<<<<<< HEAD
 let flagPoint=0; // 0=active 1= flaged.
+=======
+>>>>>>> 5106043cb430fa2f9217baa64ccc12cce74af5fc
 
 var CurrentScore_class = document.getElementsByClassName("current-score");
 
@@ -34,8 +37,11 @@ let activePlayer = 0;
 
 function switchPlayer() {
 
+<<<<<<< HEAD
   checkScore();
 
+=======
+>>>>>>> 5106043cb430fa2f9217baa64ccc12cce74af5fc
   console.log("Hold Pressed");
 
   Score0.textContent = vplayer0TScore //updating total score
@@ -55,6 +61,7 @@ function switchPlayer() {
 
 }
 
+<<<<<<< HEAD
 // Check score function.
 //On_one function. or check high score.
  function checkScore(){
@@ -88,6 +95,16 @@ function onHold() {
       console.log("flag=1 player1")
       vplayer1CScore=0;
     };
+=======
+//On_one function
+
+function onHold() {
+
+ if (activePlayer === 0) {
+    vplayer0TScore += vplayer0CScore;
+    vplayer0CScore = 0; // Reset current score to 0 on hold
+  } else {
+>>>>>>> 5106043cb430fa2f9217baa64ccc12cce74af5fc
     vplayer1TScore += vplayer1CScore;
     vplayer1CScore = 0; // Reset current score to 0 on hold
   }
@@ -97,13 +114,20 @@ function onHold() {
 
   currentScore0.textContent = vplayer0CScore; // Update displayed current score to 0 
   currentScore1.textContent = vplayer1CScore; // Update displayed current score to 0
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5106043cb430fa2f9217baa64ccc12cce74af5fc
   console.log(
     `total score 1- ${vplayer0TScore} ,, tota score 2 - ${vplayer1TScore}`
   );
 
+<<<<<<< HEAD
   flagPoint=0; //************* */
 
 
+=======
+>>>>>>> 5106043cb430fa2f9217baa64ccc12cce74af5fc
   switchPlayer();
 
  
@@ -133,8 +157,11 @@ function resetScore() {
 }
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 5106043cb430fa2f9217baa64ccc12cce74af5fc
 //roll dice on click.
 
 btnRollDice.addEventListener("click", function () {
@@ -144,6 +171,7 @@ btnRollDice.addEventListener("click", function () {
   console.log(randomNum);
 
 
+<<<<<<< HEAD
   if (randomNum==1){
     flagPoint=1;
     textBox();
@@ -152,6 +180,8 @@ btnRollDice.addEventListener("click", function () {
   }
 
 
+=======
+>>>>>>> 5106043cb430fa2f9217baa64ccc12cce74af5fc
   if (activePlayer === 0) {
     console.log("player 1 ");
     vplayer0CScore += randomNum;
@@ -160,8 +190,11 @@ btnRollDice.addEventListener("click", function () {
     vplayer1CScore += randomNum;
   }
 
+<<<<<<< HEAD
   
 
+=======
+>>>>>>> 5106043cb430fa2f9217baa64ccc12cce74af5fc
 
   document.getElementById("current--0").textContent = vplayer0CScore;
   document.getElementById("current--1").textContent = vplayer1CScore;
@@ -173,6 +206,7 @@ btnRollDice.addEventListener("click", function () {
 //test
 
 //test
+<<<<<<< HEAD
  function textBox() {
   console.log('textBox...')
   // Array of possible texts
@@ -199,6 +233,8 @@ btnRollDice.addEventListener("click", function () {
     chatBoxLabel.style.display = 'none';
   }, 5000); // 5000 milliseconds = 5 seconds
 };
+=======
+>>>>>>> 5106043cb430fa2f9217baa64ccc12cce74af5fc
 
 btnNewGame.addEventListener("click", resetScore);
 BtnHoldScore.addEventListener("click", onHold);

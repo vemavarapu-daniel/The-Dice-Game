@@ -20,6 +20,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   position: relative;
  
 }
@@ -41,6 +42,8 @@ body {
   padding: 1rem;
   border-radius: 5px;
   display: none; /* Hidden by default */
+=======
+>>>>>>> 5106043cb430fa2f9217baa64ccc12cce74af5fc
 }
 
 /* LAYOUT */
